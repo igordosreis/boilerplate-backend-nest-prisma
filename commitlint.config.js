@@ -1,16 +1,16 @@
-const matchAnyEmojiWithSpaceAfter =
+const matchAnyType =
   /(?<!:)(?::package: build|:truck: chore|:bricks: ci|:books: docs|:sparkles: feat|:boom: fix|:zap: perf|:recycle: refactor|:boom: revert|:ok_hand: style|:test_tube: test|build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)\b(?!_)/;
 const matchOptionalTicketNumberWithSpaceAfter = /(?:\((T-\d+)\)\s)?/;
-const subjectThatDontStartWithBracket = /([^\()].+)/;
+const subjectThatDontStartWithParenthesis = /([^\()].+)/;
 
 module.exports = {
   parserPreset: {
     parserOpts: {
       headerPattern: new RegExp(
         "^" +
-          matchAnyEmojiWithSpaceAfter.source +
+          matchAnyType.source +
           matchOptionalTicketNumberWithSpaceAfter.source +
-          subjectThatDontStartWithBracket.source +
+          subjectThatDontStartWithParenthesis.source +
           "$"
       ),
       headerCorrespondence: ["type", "ticket", "subject"],
