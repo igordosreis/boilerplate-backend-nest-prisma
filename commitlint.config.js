@@ -19,34 +19,9 @@ module.exports = {
   plugins: [
     {
       rules: {
-        "header-match-team-pattern": (parsed) => {
+        "allowed-types-rule": (parsed, _when, allowedTypes) => {
           const { type, ticket, subject } = parsed;
           if (type === null && ticket === null && subject === null) {
-            const allowedTypes = [
-              'build',
-              ':package: build',
-              'chore',
-              ':truck: chore',
-              'ci',
-              ':bricks: ci',
-              'docs',
-              ':books: docs',
-              'feat',
-              ':sparkles: feat',
-              'fix',
-              ':boom: fix',
-              'perf',
-              ':zap: perf',
-              'refactor',
-              ':recycle: refactor',
-              'revert',
-              ':boom: revert',
-              'style',
-              ':ok_hand: style',
-              'test',
-              ':test_tube: test',
-            ]
-
             return [
               false,
               `header must be in format 'build: add new dependency' or ':package: build: add new dependency'
@@ -65,6 +40,33 @@ ${(allowedTypes)
     },
   ],
   rules: {
-    "header-match-team-pattern": [2, "always"],
+    "allowed-types-rule": [
+      2,
+      "always", 
+      [
+        'build',
+        ':package: build',
+        'chore',
+        ':truck: chore',
+        'ci',
+        ':bricks: ci',
+        'docs',
+        ':books: docs',
+        'feat',
+        ':sparkles: feat',
+        'fix',
+        ':boom: fix',
+        'perf',
+        ':zap: perf',
+        'refactor',
+        ':recycle: refactor',
+        'revert',
+        ':boom: revert',
+        'style',
+        ':ok_hand: style',
+        'test',
+        ':test_tube: test',
+      ],
+    ],
   },
 };
