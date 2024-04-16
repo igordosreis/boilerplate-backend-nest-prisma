@@ -1,7 +1,7 @@
 const matchAnyEmojiWithSpaceAfter =
   /(?<!:)(?::package: build|:truck: chore|:bricks: ci|:books: docs|:sparkles: feat|:boom: fix|:zap: perf|:recycle: refactor|:boom: revert|:ok_hand: style|:test_tube: test|build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)\b(?!_)/;
-const matchOptionalTicketNumberWithSpaceAfter = /(?:\((T-\d+)\)\s)?/; // "[T-4605] ", "[T-1]"
-const subjectThatDontStartWithBracket = /([^\()].+)/; // "Add tests" but don't allow "[ Add tests"
+const matchOptionalTicketNumberWithSpaceAfter = /(?:\((T-\d+)\)\s)?/;
+const subjectThatDontStartWithBracket = /([^\()].+)/;
 
 module.exports = {
   parserPreset: {
