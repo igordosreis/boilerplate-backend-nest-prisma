@@ -24,11 +24,14 @@ module.exports = {
           if (type === null && ticket === null && subject === null) {
             return [
               false,
-              `header must be in format 'build: add new dependency' or ':package: build: add new dependency'
+              `The header must be in one of the following formats: 
+                    'build: add new dependency'
+                    'build (ticket): add new dependency'
+                    ':package: build: add new dependency'
+                    ':package: build (ticket): add new dependency'
 
-              ---------------
+Allowed types listed below:
 
-allowed types:
 ${(allowedTypes)
                         .map((type) => `${type}`)
                         .join("\n")}`,
