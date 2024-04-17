@@ -7,19 +7,19 @@ module.exports = {
   parserPreset: {
     parserOpts: {
       headerPattern: new RegExp(
-        "^" +
+        '^' +
           matchAnyType.source +
           matchOptionalTicketNumberWithSpaceAfter.source +
           subjectThatDontStartWithParenthesis.source +
-          "$"
+          '$',
       ),
-      headerCorrespondence: ["type", "ticket", "subject"],
+      headerCorrespondence: ['type', 'ticket', 'subject'],
     },
   },
   plugins: [
     {
       rules: {
-        "allowed-types-rule": (parsed, _when, allowedTypes) => {
+        'allowed-types-rule': (parsed, _when, allowedTypes) => {
           const { type, ticket, subject } = parsed;
           if (type === null && ticket === null && subject === null) {
             return [
@@ -32,20 +32,18 @@ module.exports = {
 
 Allowed types listed below:
 
-${(allowedTypes)
-                        .map((type) => `${type}`)
-                        .join("\n")}`,
+${allowedTypes.map((type) => `${type}`).join('\n')}`,
             ];
           }
-          return [true, ""];
+          return [true, ''];
         },
       },
     },
   ],
   rules: {
-    "allowed-types-rule": [
+    'allowed-types-rule': [
       2,
-      "always", 
+      'always',
       [
         'build',
         ':package: build',
