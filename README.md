@@ -1,6 +1,6 @@
 ###### English
 
-# Fullstack Boilerplate for MERN with Typescript
+# Backend Boilerplate with Typescript, NestJS and Prisma
 
 A simple boilerplate designed to get backend projects up and running quickly using NodeJS, NestJS and Prisma with Typescript, while providing a consistent developer experience, with tools like Volta, Husky, Lint-staged and ESLint.
 
@@ -21,7 +21,7 @@ A simple boilerplate designed to get backend projects up and running quickly usi
 
 - npm ^10.5.0
 
-- Docker if you want to use it to run the app
+- Docker to run the database
 
 - Volta if you want to automatically manage Node and npm versions
 
